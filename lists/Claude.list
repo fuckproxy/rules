@@ -1,20 +1,65 @@
-# 内容：Claude
-# 核心域名
+# Claude 相关域名
+# 按原始配置整理；新增域名的归属与必要性待核验
+
+# 域名
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,clau.de
-DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,claude.new
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudepages.dev
+DOMAIN-SUFFIX,ant.dev
+DOMAIN-SUFFIX,antspace.dev
+DOMAIN-SUFFIX,anthropic.team
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claudeacademy.com
+DOMAIN-SUFFIX,claudestudio.com
+DOMAIN-SUFFIX,chatbotclaude.com
 
 # CDN / 静态资源
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,anthropic.com.cdn.cloudflare.net
 
-# 登录 / 内容
+# 专属登录 / 内容
 DOMAIN,anthropic.auth0.com
 DOMAIN,anthropic-com.ghost.io
+# 可选：共享登录、验证码和第三方服务
+# 会影响其他使用这些服务的网站，不建议默认全部启用
 
-# IP 兜底（仅 Meta/Mihomo 更合适）
+DOMAIN-SUFFIX,hcaptcha.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,intercomassets.com
+DOMAIN,accounts.google.com
+DOMAIN,challenges.cloudflare.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,featuregates.org
+
+# 可选：监控、统计与风控
+# 共享域名与关键词规则覆盖范围较广，可能影响非 AI 流量
+
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN,http-intake.logs.us5.datadoghq.com
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN,cdn.usefathom.com
+DOMAIN-SUFFIX,hexagon-analytics.com
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,sift
+
+# 可选：Aiip.si 检测域名分流
+# 需由主配置将本列表指向同一 AI 出口
+# 本规则不配置 DNS，也不保证消除 DNS 泄露
+
+DOMAIN-SUFFIX,d.aiip.si
+
+# 可选：Claude IP / ASN 兜底
+# 按原始配置整理；启用前核验归属与范围，并确认客户端支持
 IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR6,2607:6bc0::/32,no-resolve
+IP-ASN,399358,no-resolve
